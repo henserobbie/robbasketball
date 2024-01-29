@@ -28,9 +28,9 @@ We want to compile regular season box scores into a stat list for each team each
 
 ## PCA
 When we train the model for march madness games, we would have 18 dimensions of input data (9 stats for each team). I conducted a principle component analysis to see if I could reduce the dimensionality of the data. This was the result:
-!(/docs/pca.png)
+![](/docs/pca.png)
 As shown in the graph, there is not a clear elbow that indicates a point where you can significantly reduce the dimensionality while retaining 90-95% of the variance of the data. The next step is to explore whether it is plausible to run a KNN algorithm in 18 dimensions. I graphed the distribution of the distances between points in the training set. This was the result:
-!(/docs/dimensionality.png)
+![](/docs/dimensionality.png)
 As seen above, the distribution has enough variance to avoid the cure of dimensionality, meaning a KNN classification model can be used on the data.
 
 ## Tuning Model Parameters
