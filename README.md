@@ -33,11 +33,16 @@ As shown in the graph, there is not a clear elbow that indicates a point where y
 ![](/docs/dimensionality.png)
 As seen above, the distribution has enough variance to avoid the curse of dimensionality, meaning a KNN classification model can be used on the data.
 
-## Tuning Model Parameters
-To be completed
+## KNN
+I applied KNN to the data, but it yields significantly worse test accuracy than the neural network, so it is not used.
 
-## Final Model(s)
-To be completed
+## Deep Learning Model
+The model for now is a simple neural network with 3 fully connected layers. It takes in the season stats of each team and outputs the win probabilities for each team. In the future, we could skip the data preprocessing and input the box scores of each teams' regular season games to an encoder network and use an attention based deep network to decode the endocer outputs. This would provide the model with more data rather than season averages.
 
-## Generate Bracket(s)
-To be completed
+## Usage
+- Download the data specified in the Data section.
+- Run `python src/preEfficiencies.py` to iteratively compute the adjusted offective, defensive, tempo efficiencies.
+- Run `python src/preAvgs.py` to calculate basic season averages.
+- Run `python src/compileData.py` to attach each team's season averages to each march madness matchup.
+- Run `python src/neuralNetwork.py` to train the network.
+- Run `python src/pred.py` to start making predictions. Enter the season and team ids to make a prediction. The output is the probability that team 1 wins.

@@ -1,2 +1,4 @@
 data/processed/*
 data/raw/*
+model.*
+scaler.save
