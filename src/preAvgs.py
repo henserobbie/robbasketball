@@ -7,9 +7,6 @@ EFFICIENCYITER = 20
 basePath = os.getcwd()
 games = pd.read_csv(f'{basePath}/data/raw/MRegularSeasonDetailedResults.csv',dtype = float,\
                        converters = {'Season':int, 'DayNum':int, 'WTeamID':int, 'LTeamID':int, 'WLoc':str})
-rankData = pd.read_csv(f'{basePath}/data/raw/MMasseyOrdinals_thru_Season2023_Day128.csv',\
-            converters = {'Season':int, 'RankingDayNum':int, 'SystemName':str, 'TeamID':int, 'OrdinalRank':int})
-rankData = rankData[rankData['SystemName'] == 'POM']
 teamStats = pd.read_csv(f'{basePath}/data/processed/efficiencies.csv', \
                         converters = {'Season':int, 'TeamID':int, 'OE':float, 'DE':float, 'Tempo':float})
 

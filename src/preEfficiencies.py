@@ -56,7 +56,7 @@ for index, row in teamStats.iterrows(): #init
     teamStats.loc[(teamStats['Season'] == s) & (teamStats['TeamID'] == t), 'Tempo'] = avgTempo
 
 # iteratively converge adjusted efficiencies
-for s in range(2003, 2024):
+for s in range(2003, 2025):
     for i in range(EFFICIENCYITER):
         natAvgOE = teamStats[teamStats['Season'] == s]['OE'].mean()
         natAvgDE = teamStats[teamStats['Season'] == s]['DE'].mean()
